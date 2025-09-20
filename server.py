@@ -240,6 +240,10 @@ class Worker(threading.Thread):
                     self.handle_get(client_socket, path, headers, keep_alive)
                 elif method == "POST":
                     self.handle_post(client_socket, path, headers, request_text, request_data, keep_alive)
+                elif method == "PUT":
+                    self.handle_put(client_socket, path, headers, request_text, request_data, keep_alive)
+                elif method == "DELETE":
+                    self.handle_delete(client_socket, path, headers, keep_alive)
                 else:
                     client_socket.sendall(make_response(405, keep_alive=keep_alive))
 
@@ -257,7 +261,7 @@ class Worker(threading.Thread):
         log(f"[Thread-{self.thread_id}] Request: GET {path}")
 
         # Block access to sensitive files
-        disallowed_files = ["/config", "/.env", "/secret.txt"]
+        disallowed_files = ["/etc/passwd", "/etc/shadow", "/root/.bashrc", "/.env", "/config", "/secret.txt"]
         if path in disallowed_files:
             log(f"[Thread-{self.thread_id}] Forbidden file access ❌")
             client_socket.sendall(make_response(403, keep_alive=keep_alive))
