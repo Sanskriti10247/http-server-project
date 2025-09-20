@@ -1,3 +1,0 @@
-This is a sample text file.
-It is served by the custom Python HTTP server.
-Download this file using a GET request.
