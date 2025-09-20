@@ -1,0 +1,4 @@
+These are server notes.
+- Server supports GET, POST methods.
+- Handles PNG, JPG, TXT, HTML files.
+- Stores POST JSON uploads in the uploads/ folder.
