@@ -212,6 +212,7 @@ curl -O <http://127.0.0.1:8080/contact.html> &
 
 - Logs multiple threads handling simultaneous requests
 
+
 ### **4\. Security Testing**
 ```
 curl <http://127.0.0.1:8080/../etc/passwd> # 403 Forbidden  
@@ -247,6 +248,32 @@ curl <http://127.0.0.1:8080/> # 400 Bad Request if Host missing
 
 - 415 (Unsupported Media Type) :
   <img width="1600" height="215" alt="image" src="https://github.com/user-attachments/assets/17fea9a6-2320-49b4-bd6f-6dc34f2ed9a3" />
+
+
+### **Some Checks as mentioned in the document** 
+
+1. Thread pool + Put (not allowed)
+
+![PHOTO-2025-09-20-19-48-19](https://github.com/user-attachments/assets/69337aa2-657f-4cca-88b2-d6bdb5fc2c03)
+
+2. CHECKSUM FOR ALL FILES:
+   
+  - Photo.jpeg
+    
+   <img width="817" height="117" alt="Screenshot 2025-09-29 at 11 16 11 AM" src="https://github.com/user-attachments/assets/5ecb859c-39ef-45a7-bb4e-fc4cb6eb47b0" />
+   
+  - Banner.png
+    
+   <img width="817" height="66" alt="Screenshot 2025-09-29 at 11 17 18 AM" src="https://github.com/user-attachments/assets/87f2409a-8ced-4ffd-b2d5-2c0865320fdf" />
+
+  - Notes.txt
+    
+   <img width="817" height="66" alt="Screenshot 2025-09-29 at 11 27 11 AM" src="https://github.com/user-attachments/assets/9138ee91-09ff-443b-a734-2a03643e507c" />
+
+    
+3.Missing Host Header- Response(Restriction)
+
+![PHOTO-2025-09-20-21-03-21](https://github.com/user-attachments/assets/d1a69587-e26f-4936-8bfe-bdb792ac63b4)
 
 
 ## **Server Logging Example**
