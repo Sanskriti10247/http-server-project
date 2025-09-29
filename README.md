@@ -76,7 +76,7 @@ http-server-project/
 1. **Clone the Repository**
    
       ``
-       git clone <https://github.com/><your-username>/http-server-project.git
+       git clone (https://github.com/Sanskriti10247/http-server-project.git)
 ``
 
 
