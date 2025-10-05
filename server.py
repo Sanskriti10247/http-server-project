@@ -1,4 +1,14 @@
-#!/usr/bin/env python3
+# ----------MULTITHREADED HTTP SERVER USING SOCKET PROGRAMMING----------
+
+#-----------Note---------------
+# Fully coommented , properly implemented Multithreaded HTTP Server in Python with low level Socket Programming involved .
+# Supports GET, POST, request handlers with proper error handling and security measures.
+# Dispatch requests in GET , POST, PUT , DELETE to worker threads and manage connection queue.
+# Handles path traversal and directory traversal attacks.
+# Handles keep-alive connections, imports and uses proper logging for tracking requests and server activity.
+#---------------------------------
+
+# ------ Few Imports ------------------
 import socket
 import threading
 import queue
@@ -85,6 +95,7 @@ def make_response(status, headers=None, body=b"", keep_alive=False):
     response = [f"HTTP/1.1 {status} {reason}"]  # Start with status line
 
     # Ensure headers dictionary exists
+
     if not headers:
         headers = {}
 
@@ -111,7 +122,7 @@ def make_response(status, headers=None, body=b"", keep_alive=False):
     response_bytes = "\r\n".join(response).encode("utf-8") + b"\r\n" + body
     return response_bytes
 
-
+# ------------------ Path Validation Utility ------------------
 def safe_path(path):
     """
     Safely resolve a requested path to prevent path traversal attacks.
