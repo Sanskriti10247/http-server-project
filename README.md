@@ -290,7 +290,6 @@ curl <http://127.0.0.1:8080/> # 400 Bad Request if Host missing
 
 <img width="1600" height="449" alt="image" src="https://github.com/user-attachments/assets/78f1549c-515d-49c0-9cc1-a5e9467132c1" />
 
-
 ## **Limitations**
 
 - **No HTTPS/SSL:** Only supports HTTP; data is transmitted in plaintext.
@@ -312,3 +311,14 @@ curl <http://127.0.0.1:8080/> # 400 Bad Request if Host missing
 - Add **file update and delete functionality** for POST/PUT requests.
 - Implement **advanced HTTP features**: caching headers, ETags, and chunked encoding.
 - Support **remote access** with proper authentication and host validation.
+  
+ Table for reference :-
+  
+| Method      | Status            | Description                                                   |
+| ----------- | ----------------- | ------------------------------------------------------------- |
+| **GET**     | Supported         | Serves HTML pages and binary files with correct MIME/headers. |
+| **POST**    | Supported         | Accepts only JSON, saves with timestamp in `uploads/`.        |
+| **PUT**     | Placeholder       | Returns **405 Method Not Allowed** (not implemented yet).     |
+| **DELETE**  | Placeholder       | Returns **405 Method Not Allowed** (not implemented yet).     |
+| **HEAD**    | Not Implemented   | Future enhancement.                                           |
+| **OPTIONS** | Not Implemented   | Future enhancement.                                           |
